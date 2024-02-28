@@ -16,18 +16,18 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-    uint64_t counter = 0;
-    uint64_t number = 2;
-    while (counter < n) {
+    if (n == 1) return 2; 
+    uint64_t count = 1;
+    uint64_t number = 3; 
+    while (count < n) {
         if (checkPrime(number)) {
-            counter++;
+            count++;
         }
-        else if (counter < n) {
-            number++;
+        if (count < n) {
+            number += 2; 
         }
     }
     return number;
-}
 
 uint64_t nextPrime(uint64_t value) {
     uint64_t nextnumber = value + 1;
